@@ -14,7 +14,7 @@ files.upload()
 
 arr = np.loadtxt("GO_0003677_DNA_binding.txt", skiprows=1, dtype='str')
 
-"""**Separating arrays of ones and zeros, saving the indices from the original array**"""
+"""Separating arrays of ones and zeros, saving the indices from the original array"""
 
 ind_ones=[]; ind_zeros=[]
 zeros_matrix = np.empty((0,3), str)
@@ -27,12 +27,12 @@ for i in range(len(arr)):
     ind_zeros.append(i)
     zeros_matrix = np.vstack((zeros_matrix, arr[i]))
 
-"""**Randomly down-sampling of zeros array**"""
+"""Randomly down-sampling of zeros array"""
 
 indices = np.random.choice(zeros_matrix.shape[0], len(ind_ones), replace=False)
 zeros_under = zeros_matrix[indices]
 
-"""**Number of unique proteins with this function**"""
+"""Number of unique proteins with this function"""
 
 unique_ones = []
 duplicates_ones = 0
@@ -45,7 +45,7 @@ print("Number of IDRs with this function: ", len(ones_matrix))
 print("Number of unique proteins with this function: ", len(unique_ones))
 print("Number of duplicates: ", duplicates_ones)
 
-"""**Number of unique proteins from under-sampled matrix of zeros, that do not have this function** """
+"""Number of unique proteins from under-sampled matrix of zeros, that do not have this function"""
 
 unique_zeros = []
 duplicates_zeros = 0
@@ -58,7 +58,7 @@ print("Size of a test sample of IDRs without this function: ", len(zeros_under))
 print("Number of unique proteins from a test sample without this function: ", len(unique_zeros))
 print("Number of duplicates: ", duplicates_zeros)
 
-"""**Creating a new feature and function definition matrices with selected proteins**"""
+"""Creating a new feature and function definition matrices with selected proteins"""
 
 features_arr = np.loadtxt("RES_ES_WINDELS_20220525_CLEAN_CAPPED_MEAN_ONLY.out.txt", skiprows=1, dtype='str')
 features_list = np.loadtxt("features_list.txt", dtype='str')
