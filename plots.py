@@ -108,4 +108,5 @@ colors = [plt.cm.RdYlGn(norm(c)) for c in corrplot.values]
 corrplot.plot.barh(color = colors)
 plt.tight_layout()
 plt.title("Most (un)correlated features")
+plt.xlabel("r")
 plt.show()
