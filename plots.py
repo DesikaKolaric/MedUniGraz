@@ -62,7 +62,6 @@ plt.xlabel("Precision")
 plt.ylabel("Recall")
 plt.show()
 
-<<<<<<< HEAD
 ##Zooming in on Threshold vs N of proteins where N < 750
 up_to= faidr_matrix[faidr_matrix[:,8]<750]
 new_colors = []
@@ -72,8 +71,6 @@ for i in range(up_to.shape[0]):
 plt.scatter(up_to[:,8], up_to[:,6], s=2, c = new_colors)
 plt.show()
 
-=======
->>>>>>> 66521b60e023dbd616ec30d19db7a17911351d5e
 ###IDR FEATURES DATA ANALYSIS
 #Correlation matrix of features
 data2 = pd.read_csv('RES_ES_WINDELS_20220525_CLEAN_CAPPED_MEAN_ONLY.out.txt', sep = '\t')
