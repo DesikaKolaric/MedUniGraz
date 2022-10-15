@@ -102,7 +102,7 @@ def get_correlations(features):
     return final_corr
 
 corrplot = get_correlations(features)
-fig,ax = plt.subplots(figsize = (15,10))
+fig,ax = plt.subplots(figsize = (10,5))
 norm = TwoSlopeNorm(vmin = -1, vcenter = 0, vmax = 1)
 colors = [plt.cm.RdYlGn(norm(c)) for c in corrplot.values]
 corrplot.plot.barh(color = colors)
