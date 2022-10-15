@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import os, sys
 from matplotlib.colors import TwoSlopeNorm
 
-
+##FAIDR PERFORMANCE DATA ANALYSIS
 data = pd.read_csv('FAIDR_performance_refined.tsv', sep='\t')
 #Number of proteins vs optimal treshold
 plt.scatter(data["N_PROTEINS_TRAINING"], data["OPTIMAL THRESHOLD"], s=2)
@@ -32,7 +32,7 @@ plt.show()
 good_recall = pd.read_csv('good_recall_function_groups.txt', sep='\t')
 good_recall_arr=good_recall.to_numpy()
 
-
+###IDR FEATURES DATA ANALYSIS
 #Correlation matrix of features
 data2 = pd.read_csv('RES_ES_WINDELS_20220525_CLEAN_CAPPED_MEAN_ONLY.out.txt', sep = '\t')
 features = data2.drop(['idr_name','NAME'], axis = 1)
