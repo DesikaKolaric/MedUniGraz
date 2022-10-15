@@ -1,0 +1,9 @@
+1	GTPase regulation
+2	cellular component/localization
+3	cytoskeleton-related (microtubules,actin)
+4	transmembrane transport & signalling (voltage-gated channels and membrane receptors)
+5	signalling
+6	DNA binding, transcription regulation
+7	RNA binding, processing
+8	metabolism (biosynthesis, catalytic activity)
+9	the rest
