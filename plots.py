@@ -11,22 +11,26 @@ data = pd.read_csv('FAIDR_performance_refined.tsv', sep='\t')
 plt.scatter(data["N_PROTEINS_TRAINING"], data["OPTIMAL THRESHOLD"], s=5, alpha = 0.5)
 plt.xlabel("Number of proteins in training")
 plt.ylabel("Optimal treshold")
+plt.title("FAIDR performance linear analysis")
 plt.show()
 #Zoom in on functions with less than 750 proteins in training
 up_to_750 = data[data["N_PROTEINS_TRAINING"]<750]
 plt.scatter(up_to_750["N_PROTEINS_TRAINING"], up_to_750["OPTIMAL THRESHOLD"], s=5, alpha = 0.5)
 plt.xlabel("Number of proteins in training")
-plt.ylabel("Optimal treshold")
+plt.ylabel("Optimal threshold")
+plt.title("FAIDR performance - less than 750 proteins in training")
 plt.show()
 #Precision vs recall
 plt.scatter(data["PRECISION(PPV)"], data["RECALL"], s=5, alpha = 0.5)
 plt.xlabel("Precision")
 plt.ylabel("Recall")
+plt.title("FAIDR performance linear analysis")
 plt.show()
 #Zoom in on functions with less than 750 proteins in training
 plt.scatter(up_to_750["PRECISION(PPV)"], up_to_750["RECALL"], s=5, alpha = 0.5)
 plt.xlabel("Precision")
 plt.ylabel("Recall")
+plt.title("FAIDR performance - less than 750 proteins in training")
 plt.show()
 
 ###FAIDR analysis with groups of functions colored differently
@@ -54,12 +58,14 @@ for i in range(faidr_matrix.shape[0]):
 ##FAIDR performance linear analysis - functions with recall > 0.7
 plt.scatter(data["N_PROTEINS_TRAINING"], data["OPTIMAL THRESHOLD"], c = colors_list, s = 5, alpha = 0.5)
 plt.xlabel("Number of proteins in training")
-plt.ylabel("Optimal treshold")
+plt.ylabel("Optimal threshold")
+plt.title("FAIDR performance - designated froups of functions")
 plt.show()
 
 plt.scatter(data["PRECISION(PPV)"], data["RECALL"], c = colors_list, s = 5, alpha = 0.5)
 plt.xlabel("Precision")
 plt.ylabel("Recall")
+plt.title("FAIDR performance - designated froups of functions")
 plt.show()
 
 ##Zooming in on Threshold vs N of proteins where N < 750
@@ -69,6 +75,9 @@ for i in range(up_to.shape[0]):
   key2 = up_to[i][9]
   new_colors.append(colors_dict[key2])
 plt.scatter(up_to[:,8], up_to[:,6], s=2, c = new_colors)
+plt.xlabel("Number of proteins in training")
+plt.ylabel("Optimal threshold")
+plt.title("FAIDR performance - less than 750 proteins in training")
 plt.show()
 
 ###IDR FEATURES DATA ANALYSIS
@@ -98,4 +107,5 @@ norm = TwoSlopeNorm(vmin = -1, vcenter = 0, vmax = 1)
 colors = [plt.cm.RdYlGn(norm(c)) for c in corrplot.values]
 corrplot.plot.barh(color = colors)
 plt.tight_layout()
+plt.title("Most (un)correlated features")
 plt.show()
